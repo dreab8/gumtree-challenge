@@ -21,6 +21,7 @@
     <modules>
         <module>deployer</module>
         <module>android</module>
+        <module>api-client</module>
     </modules>
     <build>
         <finalName>${project.artifactId}</finalName>

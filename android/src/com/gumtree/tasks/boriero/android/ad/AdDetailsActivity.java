@@ -1,4 +1,4 @@
-package com.gumtree.tasks.boriero.android;
+package com.gumtree.tasks.boriero.android.ad;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,6 +9,7 @@ import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.widget.ShareActionProvider;
+import com.gumtree.tasks.boriero.android.R;
 import com.manuelpeinado.fadingactionbar.FadingActionBarHelper;
 
 /**
