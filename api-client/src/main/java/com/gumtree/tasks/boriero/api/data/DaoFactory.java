@@ -5,5 +5,5 @@ package com.gumtree.tasks.boriero.api.data;
  */
 public interface DaoFactory {
 
-     AdDao adDao();
+    AdDao adDao();
 }

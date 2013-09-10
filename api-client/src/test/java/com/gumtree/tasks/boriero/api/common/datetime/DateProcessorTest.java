@@ -13,7 +13,7 @@ import static org.junit.Assert.assertThat;
 public class DateProcessorTest {
 
     @Test
-    public void should_format_the_date_in_the_UK_locale_format_dd_MMMM_YYYY() {
+    public void shouldFormatDateInUKLocaleddMMMMYYYY() {
         String date = "2012-11-21 10:12:10 BST";
         DateProcessor dp = new DateProcessor();
 

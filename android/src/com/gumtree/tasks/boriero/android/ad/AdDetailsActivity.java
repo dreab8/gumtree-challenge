@@ -19,7 +19,8 @@ import com.manuelpeinado.fadingactionbar.FadingActionBarHelper;
 /**
  * @author Andrea Boriero <dreborier@gmail.com>
  */
-public class AdDetailsActivity extends SherlockFragmentActivity implements LoaderManager.LoaderCallbacks<Ad>, AdStarringListener {
+public class AdDetailsActivity extends SherlockFragmentActivity
+        implements LoaderManager.LoaderCallbacks<Ad>, AdStarringListener {
 
     public static final String UID = "ad";
 
@@ -64,7 +65,7 @@ public class AdDetailsActivity extends SherlockFragmentActivity implements Loade
     public void onLoadFinished(Loader<Ad> adLoader, Ad ad) {
         final AdDetailsFragment adDetailsFragment =
                 (AdDetailsFragment) getSupportFragmentManager().findFragmentById( R.id.fragment_ad_details );
-        this.ad = ad;    
+        this.ad = ad;
         adDetailsFragment.setAd( ad );
     }
 

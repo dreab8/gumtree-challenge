@@ -22,6 +22,7 @@ public class AdDetailsFragment extends SherlockFragment {
     @Override
     public void onAttach(Activity activity) {
         super.onAttach( activity );
+        menuSelectionListener = (AdStarringListener) activity;
     }
 
     @Override

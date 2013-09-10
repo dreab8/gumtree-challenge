@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">android</string>
+    <string name="app_name">gumtree challenge</string>
     <string name="title_description">Description</string>
     <string name="call">CALL</string>
     <string name="sms">SMS</string>
