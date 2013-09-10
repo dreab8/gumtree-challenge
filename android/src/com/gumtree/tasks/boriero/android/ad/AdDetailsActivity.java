@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
-import android.util.Log;
+import android.view.View;
 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
@@ -19,11 +19,12 @@ import com.manuelpeinado.fadingactionbar.FadingActionBarHelper;
 /**
  * @author Andrea Boriero <dreborier@gmail.com>
  */
-public class AdDetailsActivity extends SherlockFragmentActivity implements LoaderManager.LoaderCallbacks<Ad> {
+public class AdDetailsActivity extends SherlockFragmentActivity implements LoaderManager.LoaderCallbacks<Ad>, AdStarringListener {
 
     public static final String UID = "ad";
 
     private ShareActionProvider shareActionProvider;
+    private Ad ad;
 
     public static final void start(Context context, String uid) {
         Intent i = new Intent( context, AdDetailsActivity.class );
@@ -54,6 +55,33 @@ public class AdDetailsActivity extends SherlockFragmentActivity implements Loade
         return true;
     }
 
+    @Override
+    public Loader<Ad> onCreateLoader(int i, Bundle bundle) {
+        return new AdLoader( this, getUid() );
+    }
+
+    @Override
+    public void onLoadFinished(Loader<Ad> adLoader, Ad ad) {
+        final AdDetailsFragment adDetailsFragment =
+                (AdDetailsFragment) getSupportFragmentManager().findFragmentById( R.id.fragment_ad_details );
+        this.ad = ad;    
+        adDetailsFragment.setAd( ad );
+    }
+
+    @Override
+    public void onLoaderReset(Loader<Ad> adLoader) {
+    }
+
+    @Override
+    public void onAdStarClick(View overflow) {
+        overflow.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                star( ad );
+            }
+        } );
+    }
+
     private void createShareActionProvideer(Menu menu) {
         shareActionProvider = (ShareActionProvider) menu.findItem( R.id.menu_share ).getActionProvider();
         shareActionProvider.setShareHistoryFileName( ShareActionProvider.DEFAULT_SHARE_HISTORY_FILE_NAME );
@@ -69,25 +97,11 @@ public class AdDetailsActivity extends SherlockFragmentActivity implements Loade
         return sendIntent;
     }
 
-    @Override
-    public Loader<Ad> onCreateLoader(int i, Bundle bundle) {
-        Log.v( "XXX", "createLoader" );
-        return new AdLoader( this, getUid() );
-    }
-
-    @Override
-    public void onLoadFinished(Loader<Ad> adLoader, Ad ad) {
-        final AdDetailsFragment adDetailsFragment =
-                (AdDetailsFragment) getSupportFragmentManager().findFragmentById( R.id.fragment_ad_details );
-        adDetailsFragment.setAd( ad );
-    }
-
-    @Override
-    public void onLoaderReset(Loader<Ad> adLoader) {
-    }
-
-    public String getUid() {
+    private String getUid() {
 //        return getIntent().getExtras().getString( UID );
         return "1";
+    }
+
+    private void star(Ad toStar) {
     }
 }
