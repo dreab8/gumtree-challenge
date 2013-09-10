@@ -1,0 +1,8 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+            android:id="@+id/menu_share"
+            android:actionProviderClass="com.actionbarsherlock.widget.ShareActionProvider"
+            android:icon="@drawable/ic_social_share"
+            android:showAsAction="always"
+            android:title="@string/menu_share"/>
+</menu>

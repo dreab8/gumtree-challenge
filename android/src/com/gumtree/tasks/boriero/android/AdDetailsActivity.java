@@ -6,15 +6,19 @@ import android.os.Bundle;
 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuInflater;
+import com.actionbarsherlock.widget.ShareActionProvider;
 import com.manuelpeinado.fadingactionbar.FadingActionBarHelper;
 
 /**
  * @author Andrea Boriero <dreborier@gmail.com>
  */
-public class AdDetailsActivity extends SherlockFragmentActivity
-       {
+public class AdDetailsActivity extends SherlockFragmentActivity {
 
     public static final String UID = "ad";
+
+    private ShareActionProvider shareActionProvider;
 
     public static final void start(Context context, String uid) {
         Intent i = new Intent( context, AdDetailsActivity.class );
@@ -34,5 +38,25 @@ public class AdDetailsActivity extends SherlockFragmentActivity
         setContentView( helper.createView( this ) );
         helper.initActionBar( this );
     }
- 
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getSupportMenuInflater();
+        inflater.inflate( R.menu.activity_ad_details, menu );
+
+        shareActionProvider = (ShareActionProvider) menu.findItem( R.id.menu_share ).getActionProvider();
+        shareActionProvider.setShareHistoryFileName( ShareActionProvider.DEFAULT_SHARE_HISTORY_FILE_NAME );
+        shareActionProvider.setShareIntent( createShareIntent() );
+
+        return true;
+    }
+
+    private Intent createShareIntent() {
+        Intent sendIntent = new Intent();
+        sendIntent.setAction( Intent.ACTION_SEND );
+        sendIntent.putExtra( Intent.EXTRA_TEXT, "text to share" );
+        sendIntent.setType( "text/plain" );
+
+        return sendIntent;
+    }
 }
