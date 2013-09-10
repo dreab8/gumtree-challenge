@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">android</string>
+    <string name="title_description">Description</string>
+    <string name="call">CALL</string>
+    <string name="sms">SMS</string>
+    <string name="email">EMAIL</string>
+    <string name="menu_star">Star it</string>
+    <string name="menu_share">Share</string>
+</resources>

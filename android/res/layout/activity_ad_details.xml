@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        style="@style/Match"
+        android:orientation="vertical">
+
+    <fragment
+            android:id="@+id/fragment_ad_details"
+            android:name="com.gumtree.tasks.boriero.android.AdDetailsFragment"
+            style="@style/MatchWidth"/>
+
+    <fragment android:id="@+id/fragment_ad_contact"
+              android:name="com.gumtree.tasks.boriero.android.AdContactSellerFragment"
+              style="@style/MatchWidth"/>
+
+</LinearLayout>

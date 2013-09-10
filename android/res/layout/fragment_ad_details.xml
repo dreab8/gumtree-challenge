@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              style="@style/Match"
+              android:background="@android:color/white">
+
+    <RelativeLayout
+            style="@style/MatchWidth"
+            android:layout_height="@dimen/ad_detail_image_height">
+
+        <RelativeLayout
+                style="@style/MatchHeight"
+                android:background="@color/gumtree_green"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_above="@+id/ad_time_holder">
+
+            <ImageView
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:id="@+id/btn_star"
+                    style="@style/DetailsStarButton"
+                    />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+                style="@style/MatchWidth"
+                android:id="@id/ad_time_holder"
+                android:background="@android:color/white"
+                android:paddingTop="@dimen/gutter"
+                android:paddingRight="@dimen/gutter"
+                android:layout_height="@dimen/ad_detail_date_height"
+                android:layout_alignParentBottom="true">
+
+            <TextView
+                    android:id="@+id/ad_time"
+                    style="@style/Wrap"
+                    android:layout_alignParentRight="true"
+                    android:textAppearance="@style/TextXLarge"
+                    android:textColor="@color/midtone_grey"
+                    android:fontFamily="sans-serif-light"/>
+
+        </RelativeLayout>
+
+        <ImageView
+                android:id="@+id/ad_image"
+                android:background="@drawable/image_frame_normal"
+                android:layout_width="@dimen/ad_detail_image_width"
+                android:layout_height="@dimen/ad_detail_image_height"
+                android:layout_alignParentLeft="true"
+                android:scaleType="centerCrop"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+            android:background="@android:color/white"
+            style="@style/MatchWidth">
+
+        <TextView
+                android:id="@+id/ad_title"
+                android:paddingLeft="@dimen/gutter_double"
+                android:paddingRight="@dimen/gutter"
+                android:paddingBottom="@dimen/gutter"
+                style="@style/MatchWidth"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/dark_grey"
+                android:textAppearance="@style/TextLarge"/>
+
+        <TextView
+                style="@style/AdDetailsTitle.Description"/>
+
+        <TextView
+                android:id="@+id/ad_description"
+                android:paddingLeft="@dimen/gutter_double"
+                android:paddingRight="@dimen/gutter"
+                android:paddingBottom="@dimen/gutter"
+                style="@style/MatchWidth"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/dark_grey"
+                android:textAppearance="@style/TextLarge"/>
+    </LinearLayout>
+
+    <View
+            android:layout_height="20dp"
+            style="@style/MatchWidth"/>
+
+</LinearLayout>

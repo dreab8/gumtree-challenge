@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    
+    <dimen name="ad_detail_image_width">200dp</dimen>
+    <dimen name="ad_detail_image_height">200dp</dimen>
+    <dimen name="ad_detail_date_height">150dp</dimen>
+    
+    <!-- GUTTERS -->
+    <dimen name="gutter">10dp</dimen>
+    <dimen name="gutter_double">20dp</dimen>
+    <!--<dimen name="gutter_half">5dp</dimen>-->
+    <!--<dimen name="gutter_quarter">2.5dp</dimen>-->
+    <!--<dimen name="dist_title_to_description">5dp</dimen>-->
+    <!--<dimen name="list_overflow_menu_dimen">40dp</dimen>-->
+    
+    <!-- TEXT -->
+    <dimen name="text_large">18sp</dimen>
+    <dimen name="text_medium">16sp</dimen>
+    <dimen name="text_x_large">26sp</dimen>
+</resources>

@@ -10,7 +10,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <android.maven.plugin.version>3.6.0</android.maven.plugin.version>
-        <android.version>2.3.3</android.version>
+        <android.version>4.2_r1</android.version>
         <android-test.version>4.1.1.4</android-test.version>
         <android.sdk.platform>17</android.sdk.platform>
         <android.support.version>r18</android.support.version>

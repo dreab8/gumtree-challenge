@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>gumtree-challange</groupId>
+        <artifactId>gumtree-challange-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <artifactId>gumtree-challange-deployer</artifactId>
+    <packaging>pom</packaging>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+                <version>2.3.1</version>
+                <executions>
+
+                    <execution>
+                        <id>compatibility-v4-r13</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>install-file</goal>
+                        </goals>
+                        <configuration>
+                            <groupId>android.support</groupId>
+                            <artifactId>compatibility-v4</artifactId>
+                            <packaging>jar</packaging>
+                            <version>r18</version>
+                            <file>android-support-v4-r18.jar</file>
+                        </configuration>
+                    </execution>
+                    <!--<execution>-->
+                        <!--<id>compatibility-v7-r18</id>-->
+                        <!--<phase>install</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>install-file</goal>-->
+                        <!--</goals>-->
+                        <!--<configuration>-->
+                            <!--<groupId>android.support</groupId>-->
+                            <!--<artifactId>compatibility-v7-appcompat</artifactId>-->
+                            <!--<packaging>jar</packaging>-->
+                            <!--<version>r18</version>-->
+                            <!--<file>android-support-v7-appcompat.jar</file>-->
+                        <!--</configuration>-->
+                    <!--</execution>-->
+                    
+                    
+                    <execution>
+                        <id>android-4.2_r1</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>install-file</goal>
+                        </goals>
+                        <configuration>
+                            <groupId>android</groupId>
+                            <artifactId>android</artifactId>
+                            <packaging>jar</packaging>
+                            <version>4.2_r1</version>
+                            <file>android-4.2_r1.jar</file>
+                        </configuration>
+                    </execution>
+
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
