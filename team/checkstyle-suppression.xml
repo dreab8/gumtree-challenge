@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE suppressions PUBLIC
+        "-//Puppy Crawl//DTD Suppressions 1.0//EN"
+        "http://www.puppycrawl.com/dtds/suppressions_1_0.dtd">
+
+<suppressions>
+    <suppress checks="[a-zA-Z0-9]*"
+              files="ScrollerCompatIcs.java"/>
+    <suppress checks="[a-zA-Z0-9]*"
+              files="EndlessAdapter.java"/>
+    <suppress checks="[a-zA-Z0-9]*"
+              files="BaseAccountAuthenticatorActivity.java"/>
+    <suppress checks="[a-zA-Z0-9]*"
+              files="ScrollerCompat.java"/>
+    <suppress checks="[a-zA-Z0-9]*"
+              files="SlidingLayer.java"/>
+
+    <suppress files="src/test/java/.*/.*Test\.java" checks="MethodNameCheck"/>
+    <suppress files="src/test/java/.*/.*Test\.java" checks="MagicNumber"/>
+    <suppress files="src/test/java/.*/.*Test\.java" checks="LineLength"/>
+    <!-- Test methods can have names with eg. underscores -->
+
+
+</suppressions>
