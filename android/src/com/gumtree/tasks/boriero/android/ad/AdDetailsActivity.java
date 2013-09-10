@@ -5,12 +5,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
+import android.util.Log;
 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.widget.ShareActionProvider;
 import com.gumtree.tasks.boriero.android.R;
+import com.gumtree.tasks.boriero.android.ad.loader.AdLoader;
 import com.gumtree.tasks.boriero.api.ad.Ad;
 import com.manuelpeinado.fadingactionbar.FadingActionBarHelper;
 
@@ -41,7 +43,6 @@ public class AdDetailsActivity extends SherlockFragmentActivity implements Loade
         setContentView( helper.createView( this ) );
         helper.initActionBar( this );
         getSupportLoaderManager().initLoader( 0, savedInstanceState, this );
-
     }
 
     @Override
@@ -70,16 +71,23 @@ public class AdDetailsActivity extends SherlockFragmentActivity implements Loade
 
     @Override
     public Loader<Ad> onCreateLoader(int i, Bundle bundle) {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        Log.v( "XXX", "createLoader" );
+        return new AdLoader( this, getUid() );
     }
 
     @Override
     public void onLoadFinished(Loader<Ad> adLoader, Ad ad) {
-        //To change body of implemented methods use File | Settings | File Templates.
+        final AdDetailsFragment adDetailsFragment =
+                (AdDetailsFragment) getSupportFragmentManager().findFragmentById( R.id.fragment_ad_details );
+        adDetailsFragment.setAd( ad );
     }
 
     @Override
     public void onLoaderReset(Loader<Ad> adLoader) {
-        //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    public String getUid() {
+//        return getIntent().getExtras().getString( UID );
+        return "1";
     }
 }
