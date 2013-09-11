@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        style="@style/MatchWidth">
 
-<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
-           android:id="@+id/ad_image" style="@style/Match"
-           android:adjustViewBounds="true"
-           android:scaleType="centerCrop"/>
+    <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+               android:id="@+id/ad_image"
+               style="@style/Match"
+               android:adjustViewBounds="true"
+               android:scaleType="centerCrop"/>
+
+    <RelativeLayout
+            style="@style/Wrap"
+            android:layout_height="50dp"
+            android:layout_width="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="2dp"
+            android:layout_marginRight="2dp"
+            android:background="#A0ffffff">
+
+        <TextView
+                style="@style/AdDetailsPrice"
+                android:id="@+id/ad_price"
+                android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

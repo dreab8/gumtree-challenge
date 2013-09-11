@@ -2,7 +2,6 @@ package com.gumtree.tasks.boriero.android.ad;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager;
@@ -18,9 +17,6 @@ import com.gumtree.tasks.boriero.android.R;
 import com.gumtree.tasks.boriero.android.ad.loader.AdLoader;
 import com.gumtree.tasks.boriero.api.ad.Ad;
 import com.manuelpeinado.fadingactionbar.FadingActionBarHelper;
-
-import java.io.IOException;
-import java.io.InputStream;
 
 /**
  * @author Andrea Boriero <dreborier@gmail.com>
@@ -84,14 +80,7 @@ public class AdDetailsActivity extends SherlockFragmentActivity
     public void onLoadFinished(Loader<Ad> adLoader, Ad ad) {
         this.ad = ad;
         getAdDetailsFragment().setAd( ad );
-        InputStream ims = null;
-        try {
-            ims = getAssets().open( ad.getImage() );
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        Drawable d = Drawable.createFromStream( ims, null );
-        getAdImageFragment().setImage( d );
+        getAdImageFragment().setAd( ad );
     }
 
     @Override

@@ -79,13 +79,10 @@
         <item name="android:layout_alignParentRight">true</item>
     </style>
     <style name="AdDetailsPrice" parent="@style/Wrap">
-        <item name="android:textAppearance">@style/TextMedium</item>
-        <item name="android:paddingLeft">@dimen/gutter_double</item>
-        <item name="android:paddingRight">@dimen/gutter</item>
-        <item name="android:paddingBottom">@dimen/gutter</item>
-        <item name="android:fontFamily">sans-serif-light</item>
-        <item name="android:textColor">@color/dark_grey</item>
-        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:textAppearance">@style/TextXLarge.Roboto.Light</item>
+        <item name="android:textColor">@color/pressed_gumtree</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
     </style>
 
     <style name="TextLarge">
