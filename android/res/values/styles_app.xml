@@ -28,18 +28,54 @@
     <style name="DetailsStarButton" parent="@style/Wrap">
         <item name="android:layout_width">30dp</item>
         <item name="android:layout_height">30dp</item>
+        <item name="android:layout_centerVertical">true</item>
         <item name="android:background">@drawable/btn_toggle_fav</item>
         <item name="android:layout_gravity">center_vertical</item>
         <item name="android:gravity">center</item>
         <item name="android:scaleType">center</item>
         <item name="android:textOff"> </item>
         <item name="android:textOn"> </item>
+        <item name="android:layout_marginRight">6dp</item>
     </style>
-    <style name="AdDetailsTitle.Description" parent="@style/MatchWidth">
+    <style name="DetailsSocialShareButton" parent="@style/MatchHeight">
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:src">@drawable/ic_social_share</item>
+        <item name="android:layout_marginRight">@dimen/gutter_double</item>
+        <item name="android:background">@drawable/selectable_background_gumtree</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:scaleType">center</item>
+    </style>
+    <style name="AdDetailsTitle" parent="@style/MatchWidth">
+        <item name="android:textAppearance">@style/TextXLarge.Light.Roboto.Light</item>
+        <item name="android:textColor">@color/dark_grey</item>
+        <item name="android:textAppearance">@style/TextLarge</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:paddingLeft">@dimen/gutter_double</item>
+        <item name="android:paddingRight">@dimen/gutter</item>
+        <item name="android:paddingBottom">@dimen/gutter</item>
+    </style>
+    <style name="AdDetailsDescriptionTitle" parent="@style/MatchWidth">
         <item name="android:textAppearance">@style/TextXLarge.Light.Roboto.Light</item>
         <item name="android:text">@string/title_description</item>
         <item name="android:textStyle">italic</item>
         <item name="android:padding">@dimen/gutter</item>
+    </style>
+    <style name="AdDetailsDescription" parent="@style/MatchWidth">
+        <item name="android:textAppearance">@style/TextXLarge.Light.Roboto.Light</item>
+        <item name="android:textColor">@color/dark_grey</item>
+        <item name="android:textAppearance">@style/TextLarge</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:paddingLeft">@dimen/gutter_double</item>
+        <item name="android:paddingRight">@dimen/gutter</item>
+        <item name="android:paddingBottom">@dimen/gutter</item>
+    </style>
+    <style name="AdDetailsTime" parent="@style/Wrap">
+        <item name="android:textAppearance">@style/TextXLarge.Light.Roboto.Light</item>
+        <item name="android:textColor">@color/midtone_grey</item>
+        <item name="android:textAppearance">@style/TextLarge</item>
+        <item name="android:fontFamily">sans-serif-light</item>
     </style>
 
     <style name="TextLarge">

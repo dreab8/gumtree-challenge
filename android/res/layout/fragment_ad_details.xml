@@ -8,21 +8,22 @@
             style="@style/MatchWidth"
             android:layout_height="@dimen/ad_detail_image_height">
 
-        <RelativeLayout
-                style="@style/MatchHeight"
-                android:background="@color/gumtree_green"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentTop="true"
-                android:layout_above="@+id/ad_time_holder">
+        <LinearLayout
+                style="@style/Match"
+                android:orientation="horizontal"
+                android:gravity="right"
+                android:layout_above="@+id/ad_time_holder"
+                android:background="@color/gumtree_green">
 
             <ImageView
-                    android:layout_centerVertical="true"
+                    android:id="@+id/btn_share"
+                    style="@style/DetailsSocialShareButton"
+                    android:layout_toLeftOf="@+id/btn_star"/>
+            <ToggleButton
                     android:layout_alignParentRight="true"
-                    android:id="@+id/btn_star"
-                    style="@style/DetailsStarButton"
-                    />
-
-        </RelativeLayout>
+                    android:id="@id/btn_star"
+                    style="@style/DetailsStarButton"/>
+        </LinearLayout>
 
         <RelativeLayout
                 style="@style/MatchWidth"
@@ -35,12 +36,8 @@
 
             <TextView
                     android:id="@+id/ad_time"
-                    style="@style/Wrap"
-                    android:layout_alignParentRight="true"
-                    android:textAppearance="@style/TextXLarge"
-                    android:textColor="@color/midtone_grey"
-                    android:fontFamily="sans-serif-light"/>
-
+                    style="@style/AdDetailsTime"
+                    android:layout_alignParentRight="true"/>
         </RelativeLayout>
 
         <ImageView
@@ -50,7 +47,6 @@
                 android:layout_height="@dimen/ad_detail_image_height"
                 android:layout_alignParentLeft="true"
                 android:scaleType="centerCrop"/>
-
     </RelativeLayout>
 
     <LinearLayout
@@ -59,26 +55,14 @@
 
         <TextView
                 android:id="@+id/ad_title"
-                android:paddingLeft="@dimen/gutter_double"
-                android:paddingRight="@dimen/gutter"
-                android:paddingBottom="@dimen/gutter"
-                style="@style/MatchWidth"
-                android:fontFamily="sans-serif-light"
-                android:textColor="@color/dark_grey"
-                android:textAppearance="@style/TextLarge"/>
+                style="@style/AdDetailsTitle"/>
 
         <TextView
-                style="@style/AdDetailsTitle.Description"/>
+                style="@style/AdDetailsDescriptionTitle"/>
 
         <TextView
                 android:id="@+id/ad_description"
-                android:paddingLeft="@dimen/gutter_double"
-                android:paddingRight="@dimen/gutter"
-                android:paddingBottom="@dimen/gutter"
-                style="@style/MatchWidth"
-                android:fontFamily="sans-serif-light"
-                android:textColor="@color/dark_grey"
-                android:textAppearance="@style/TextLarge"/>
+                style="@style/AdDetailsDescription"/>
     </LinearLayout>
 
     <View

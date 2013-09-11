@@ -17,12 +17,10 @@ import com.gumtree.tasks.boriero.api.ad.Ad;
 public class AdDetailsFragment extends SherlockFragment {
 
     private static final String AD = "ad";
-    AdStarringListener menuSelectionListener;
 
     @Override
     public void onAttach(Activity activity) {
         super.onAttach( activity );
-        menuSelectionListener = (AdStarringListener) activity;
     }
 
     @Override
@@ -42,6 +40,5 @@ public class AdDetailsFragment extends SherlockFragment {
     }
 
     private void setStarButton(View view) {
-        menuSelectionListener.onAdStarClick( view.findViewById( R.id.btn_star ) );
     }
 }

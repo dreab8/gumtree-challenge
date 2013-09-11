@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
-import android.view.View;
 import android.widget.Toast;
 
 import com.actionbarsherlock.app.ActionBar;
@@ -27,7 +26,7 @@ import java.io.InputStream;
  * @author Andrea Boriero <dreborier@gmail.com>
  */
 public class AdDetailsActivity extends SherlockFragmentActivity
-        implements LoaderManager.LoaderCallbacks<Ad>, AdStarringListener {
+        implements LoaderManager.LoaderCallbacks<Ad> {
 
     public static final String UID = "ad";
 
@@ -97,16 +96,6 @@ public class AdDetailsActivity extends SherlockFragmentActivity
 
     @Override
     public void onLoaderReset(Loader<Ad> adLoader) {
-    }
-
-    @Override
-    public void onAdStarClick(View overflow) {
-        overflow.setOnClickListener( new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                star( ad );
-            }
-        } );
     }
 
     private AdImageFragment getAdImageFragment() {
