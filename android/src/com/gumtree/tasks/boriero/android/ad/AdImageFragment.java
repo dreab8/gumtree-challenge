@@ -31,7 +31,7 @@ public class AdImageFragment extends SherlockFragment {
     }
 
     private void setPrice(String price) {
-        TextView priceView = ( TextView )getView().findViewById( R.id.ad_price );
+        TextView priceView = (TextView) getView().findViewById( R.id.ad_price );
         priceView.setText( price );
     }
 
