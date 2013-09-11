@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout
+<FrameLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        style="@style/Match"
-        android:orientation="vertical">
+        style="@style/Match">
 
     <fragment
             android:id="@+id/fragment_ad_details"
             android:name="com.gumtree.tasks.boriero.android.ad.AdDetailsFragment"
             style="@style/MatchWidth"/>
 
-    <fragment android:id="@+id/fragment_ad_contact"
-              android:name="com.gumtree.tasks.boriero.android.ad.AdContactSellerFragment"
-              style="@style/MatchWidth"/>
-
-</LinearLayout>
+</FrameLayout>

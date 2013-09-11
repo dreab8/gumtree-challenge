@@ -8,12 +8,13 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
 import android.view.View;
-import android.view.Window;
+import android.widget.Toast;
 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.widget.ShareActionProvider;
+import com.actionbarsherlock.view.MenuItem;
+import com.actionbarsherlock.view.Window;
 import com.gumtree.tasks.boriero.android.R;
 import com.gumtree.tasks.boriero.android.ad.loader.AdLoader;
 import com.gumtree.tasks.boriero.api.ad.Ad;
@@ -30,7 +31,6 @@ public class AdDetailsActivity extends SherlockFragmentActivity
 
     public static final String UID = "ad";
 
-    private ShareActionProvider shareActionProvider;
     private Ad ad;
 
     public static final void start(Context context, String uid) {
@@ -42,7 +42,7 @@ public class AdDetailsActivity extends SherlockFragmentActivity
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
-        getWindow().requestFeature( Window.FEATURE_ACTION_BAR_OVERLAY );
+        requestWindowFeature( Window.FEATURE_ACTION_BAR_OVERLAY );
         getSupportActionBar().setDisplayOptions( ActionBar.DISPLAY_HOME_AS_UP | ActionBar.DISPLAY_SHOW_HOME );
         FadingActionBarHelper helper = new FadingActionBarHelper()
                 .actionBarBackground( R.drawable.ab_solid_gumtree )
@@ -57,10 +57,23 @@ public class AdDetailsActivity extends SherlockFragmentActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getSupportMenuInflater().inflate( R.menu.activity_ad_details, menu );
-
-        createShareActionProvider( menu );
-
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_call:
+                call();
+                break;
+            case R.id.menu_email:
+                mail();
+                break;
+            case R.id.menu_sms:
+                sms();
+                break;
+        }
+        return super.onOptionsItemSelected( item );
     }
 
     @Override
@@ -74,24 +87,12 @@ public class AdDetailsActivity extends SherlockFragmentActivity
         getAdDetailsFragment().setAd( ad );
         InputStream ims = null;
         try {
-            ims = getAssets().open(ad.getImage());
+            ims = getAssets().open( ad.getImage() );
         } catch (IOException e) {
-            e.printStackTrace();  
+            e.printStackTrace();
         }
-        Drawable d = Drawable.createFromStream(ims, null);
-        getAdImageFragment().setImage(d);
-    }
-
-    private AdImageFragment getAdImageFragment() {
-        return (AdImageFragment) getFragment( R.id.fragment_ad_image );
-    }
-
-    private AdDetailsFragment getAdDetailsFragment() {
-        return (AdDetailsFragment)getFragment( R.id.fragment_ad_details );
-    }
-
-    private Fragment getFragment(int fragmentId) {
-        return  getSupportFragmentManager().findFragmentById( fragmentId );
+        Drawable d = Drawable.createFromStream( ims, null );
+        getAdImageFragment().setImage( d );
     }
 
     @Override
@@ -108,19 +109,16 @@ public class AdDetailsActivity extends SherlockFragmentActivity
         } );
     }
 
-    private void createShareActionProvider(Menu menu) {
-        shareActionProvider = (ShareActionProvider) menu.findItem( R.id.menu_share ).getActionProvider();
-        shareActionProvider.setShareHistoryFileName( ShareActionProvider.DEFAULT_SHARE_HISTORY_FILE_NAME );
-        shareActionProvider.setShareIntent( createShareIntent() );
+    private AdImageFragment getAdImageFragment() {
+        return (AdImageFragment) getFragment( R.id.fragment_ad_image );
     }
 
-    private Intent createShareIntent() {
-        Intent sendIntent = new Intent();
-        sendIntent.setAction( Intent.ACTION_SEND );
-        sendIntent.putExtra( Intent.EXTRA_TEXT, "text to share" );
-        sendIntent.setType( "text/plain" );
+    private AdDetailsFragment getAdDetailsFragment() {
+        return (AdDetailsFragment) getFragment( R.id.fragment_ad_details );
+    }
 
-        return sendIntent;
+    private Fragment getFragment(int fragmentId) {
+        return getSupportFragmentManager().findFragmentById( fragmentId );
     }
 
     private String getUid() {
@@ -129,5 +127,21 @@ public class AdDetailsActivity extends SherlockFragmentActivity
     }
 
     private void star(Ad toStar) {
+    }
+
+    private void sms() {
+        showToast( "sending sms to" + ad.getEmailAddress() );
+    }
+
+    private void mail() {
+        showToast( "sending mail to address" + ad.getEmailAddress() );
+    }
+
+    private void call() {
+        showToast( "calling number " + ad.getPhoneNumber() );
+    }
+
+    private void showToast(String message) {
+        Toast.makeText( getApplicationContext(), message, Toast.LENGTH_SHORT ).show();
     }
 }

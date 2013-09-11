@@ -1,8 +1,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-            android:id="@+id/menu_share"
-            android:actionProviderClass="com.actionbarsherlock.widget.ShareActionProvider"
-            android:icon="@drawable/ic_social_share"
+            android:id="@+id/menu_call"
+            android:icon="@drawable/ic_action_device_access_call"
             android:showAsAction="always"
-            android:title="@string/menu_share"/>
+            android:title="@string/menu_call"/>
+    <item
+            android:id="@+id/menu_sms"
+            android:icon="@drawable/ic_action_social_chat"
+            android:showAsAction="always"
+            android:title="@string/menu_sms"/>
+    <item
+            android:id="@+id/menu_email"
+            android:icon="@drawable/ic_action_content_new_email"
+            android:showAsAction="always"
+            android:title="@string/menu_email"/>
 </menu>

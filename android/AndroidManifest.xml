@@ -3,10 +3,10 @@
           package="com.gumtree.tasks.boriero.android"
           android:versionCode="1"
           android:versionName="1.0">
-    <uses-sdk android:minSdkVersion="10"
+    <uses-sdk android:minSdkVersion="8"
               android:targetSdkVersion="16"/>
     <application android:label="@string/app_name" android:icon="@drawable/ic_launcher"
-                 android:theme="@style/Theme.Sherlock"
+                 android:theme="@style/Theme.Gumtree"
                  android:name=".Gumtree">
         <activity android:name=".ad.AdDetailsActivity"
                   android:label="@string/app_name">
@@ -17,3 +17,4 @@
         </activity>
     </application>
 </manifest>
+    
