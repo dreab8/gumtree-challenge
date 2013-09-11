@@ -25,12 +25,13 @@
                     style="@style/DetailsStarButton"/>
         </LinearLayout>
 
+
         <RelativeLayout
                 style="@style/MatchWidth"
                 android:id="@id/ad_time_holder"
                 android:background="@android:color/white"
-                android:paddingTop="@dimen/gutter"
-                android:paddingRight="@dimen/gutter"
+                android:paddingTop="2dp"
+                android:paddingRight="2dp"
                 android:layout_height="@dimen/ad_detail_date_height"
                 android:layout_alignParentBottom="true">
 
@@ -46,7 +47,8 @@
                 android:layout_width="@dimen/ad_detail_image_width"
                 android:layout_height="@dimen/ad_detail_image_height"
                 android:layout_alignParentLeft="true"
-                android:scaleType="centerCrop"/>
+                android:src="@drawable/map"
+                android:scaleType="fitXY"/>
     </RelativeLayout>
 
     <LinearLayout

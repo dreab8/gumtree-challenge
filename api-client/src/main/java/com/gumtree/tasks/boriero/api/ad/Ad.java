@@ -23,6 +23,8 @@ public class Ad implements Serializable {
     private String displayDate;
     private String emailAddress;
     private String url;
+    private String phoneNumber;
+
 
     public String getPhoneNumber() {
         return phoneNumber;
@@ -63,8 +65,6 @@ public class Ad implements Serializable {
     public void setTitle(String title) {
         this.title = title;
     }
-
-    private String phoneNumber;
 
     public String getDescription() {
         return description;
@@ -115,10 +115,7 @@ public class Ad implements Serializable {
     }
 
     public String getDisplayDate() {
-        if (displayDate == null) {
-            displayDate = new DateProcessor().format( postedDate );
-        }
-        return displayDate;
+        return new DateProcessor().format( postedDate );
     }
 
     @Override

@@ -7,7 +7,7 @@ import java.util.Locale;
 
 public class DateProcessor {
 
-    private static final String SERVER_SIDE_DATE_PATTERN = "yyyy-MM-dd hh:mm:ss Z";
+    private static final String SERVER_SIDE_DATE_PATTERN = "yyyy-MM-dd hh:mm:ss";
     private static final String READABLE_PATTERN = "dd MMMM";
 
     public String format(String date) {
@@ -24,7 +24,7 @@ public class DateProcessor {
             DateFormat rf = new SimpleDateFormat( READABLE_PATTERN, locale );
             return rf.format( dateToConvert );
         } catch (Exception e) {
-            return "";
+            throw new RuntimeException( e );
         }
     }
 }

@@ -33,8 +33,8 @@
         <item name="android:layout_gravity">center_vertical</item>
         <item name="android:gravity">center</item>
         <item name="android:scaleType">center</item>
-        <item name="android:textOff"> </item>
-        <item name="android:textOn"> </item>
+        <item name="android:textOff"></item>
+        <item name="android:textOn"></item>
         <item name="android:layout_marginRight">6dp</item>
     </style>
     <style name="DetailsSocialShareButton" parent="@style/MatchHeight">
@@ -72,10 +72,13 @@
         <item name="android:paddingBottom">@dimen/gutter</item>
     </style>
     <style name="AdDetailsTime" parent="@style/Wrap">
-        <item name="android:textAppearance">@style/TextXLarge.Light.Roboto.Light</item>
-        <item name="android:textColor">@color/midtone_grey</item>
-        <item name="android:textAppearance">@style/TextLarge</item>
-        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textAppearance">@style/TextLarge.Light.Roboto.Light</item>
+    </style>
+    <style name="AdDetailsPrice" parent="@style/Wrap">
+        <item name="android:textAppearance">@style/TextXLarge.Roboto.Light</item>
+        <item name="android:textColor">@color/pressed_gumtree</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
     </style>
 
     <style name="TextLarge">
@@ -88,7 +91,6 @@
     <style name="TextSmall">
         <item name="android:textSize">@dimen/text_small</item>
     </style>
-
     <style name="TextMedium.Light" parent="@style/TextMedium">
         <item name="android:textColor">@color/midtone_grey</item>
     </style>
@@ -105,23 +107,22 @@
     <style name="TextXLarge.Light" parent="@style/TextXLarge">
         <item name="android:textColor">@color/midtone_grey</item>
     </style>
+    <style name="TextLarge.Light" parent="@style/TextLarge">
+        <item name="android:textColor">@color/midtone_grey</item>
+    </style>
+
     <style name="TextMedium.Light.Roboto.Light" parent="@style/TextMedium.Light">
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+    <style name="TextLarge.Light.Roboto.Light" parent="@style/TextLarge.Light">
         <item name="android:fontFamily">sans-serif-light</item>
     </style>
     <style name="TextXLarge.Light.Roboto.Light" parent="@style/TextXLarge.Light">
         <item name="android:fontFamily">sans-serif-light</item>
     </style>
-    <style name="HorizotalSeparator" parent="@style/MatchWidth" >
+    <style name="HorizotalSeparator" parent="@style/MatchWidth">
         <item name="android:background">@color/midtone_grey</item>
         <item name="android:layout_height">0.4dip</item>
     </style>
-
-    <style name="AdDetails.Price" parent="@style/Wrap">
-        <item name="android:textAppearance">@style/TextXLarge.Roboto.Light</item>
-        <item name="android:textColor">@color/pressed_gumtree</item>
-        <item name="android:singleLine">true</item>
-        <item name="android:ellipsize">end</item>
-    </style>
-
 
 </resources>

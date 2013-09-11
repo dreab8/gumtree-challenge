@@ -13,9 +13,9 @@ public class FakeAdDao implements AdDao {
         fakeAd.setImage( "bike.JPG" );
         fakeAd.setEmailAddress( "dreborier@gmail.com" );
         fakeAd.setLocation( "Angel" );
-        fakeAd.setTitle("An amazing bike");
+        fakeAd.setTitle( "An amazing bike" );
         fakeAd.setPhoneNumber( "07333838383" );
-        fakeAd.setPostedDate( "2012-11-21 10:12:10 BST" );
+        fakeAd.setPostedDate( "2012-11-21 10:12:10" );
         fakeAd.setDescription(
                 "Raymond&Burg is dedicated to provide excellent quality bikes to commuters all"
                 + " over the country. We keep all kind of bikes in our stock from student bikes to top of"
