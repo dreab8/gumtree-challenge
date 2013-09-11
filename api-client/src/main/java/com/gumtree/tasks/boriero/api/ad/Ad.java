@@ -22,6 +22,7 @@ public class Ad implements Serializable {
     private String postedDate;
     private String displayDate;
     private String emailAddress;
+    private String url;
 
     public String getPhoneNumber() {
         return phoneNumber;
@@ -144,5 +145,13 @@ public class Ad implements Serializable {
     public String toString() {
         return "ad{" + "uid=" + uid + ", description=" + description
                + ", lat=" + lat + ", lon=" + lon + ", image=" + getImage() + ", postedDate='" + postedDate + "}";
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }
