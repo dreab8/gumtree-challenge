@@ -57,6 +57,11 @@ public class AdDetailsFragment extends SherlockFragment {
         setAdDescription( ad.getDescription() );
         setAdTime( ad.getDisplayDate() );
         setAdLocaiton(ad.getLocation());
+        setAdTitle(ad.getTitle());
+    }
+
+    private void setAdTitle(String title) {
+        setTextViewValue( R.id.ad_title, title   );
     }
 
     private void setAdLocaiton(String location) {
