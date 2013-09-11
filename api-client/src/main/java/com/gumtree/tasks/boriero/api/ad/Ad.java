@@ -13,7 +13,7 @@ public class Ad implements Serializable {
 
     private Long uid;
     private String title;
-    private float price;
+    private String price;
     private String description;
     private Double lat;
     private Double lon;
@@ -50,11 +50,11 @@ public class Ad implements Serializable {
         this.location = location;
     }
 
-    public float getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 

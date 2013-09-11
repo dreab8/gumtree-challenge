@@ -36,6 +36,7 @@
         <item name="android:textOff"></item>
         <item name="android:textOn"></item>
         <item name="android:layout_marginRight">6dp</item>
+        <item name="android:layout_alignParentRight">true</item>
     </style>
     <style name="DetailsSocialShareButton" parent="@style/MatchHeight">
         <item name="android:layout_centerVertical">true</item>
@@ -55,6 +56,7 @@
         <item name="android:paddingLeft">@dimen/gutter_double</item>
         <item name="android:paddingRight">@dimen/gutter</item>
         <item name="android:paddingBottom">@dimen/gutter</item>
+        <item name="android:layout_alignParentRight">true</item>
     </style>
     <style name="AdDetailsDescriptionTitle" parent="@style/MatchWidth">
         <item name="android:textAppearance">@style/TextXLarge.Light.Roboto.Light</item>
@@ -73,12 +75,16 @@
     </style>
     <style name="AdDetailsTime" parent="@style/Wrap">
         <item name="android:textAppearance">@style/TextLarge.Light.Roboto.Light</item>
+        <item name="android:layout_alignParentRight">true</item>
     </style>
     <style name="AdDetailsPrice" parent="@style/Wrap">
-        <item name="android:textAppearance">@style/TextXLarge.Roboto.Light</item>
-        <item name="android:textColor">@color/pressed_gumtree</item>
-        <item name="android:singleLine">true</item>
-        <item name="android:ellipsize">end</item>
+        <item name="android:textAppearance">@style/TextMedium</item>
+        <item name="android:paddingLeft">@dimen/gutter_double</item>
+        <item name="android:paddingRight">@dimen/gutter</item>
+        <item name="android:paddingBottom">@dimen/gutter</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textColor">@color/dark_grey</item>
+        <item name="android:layout_alignParentRight">true</item>
     </style>
 
     <style name="TextLarge">

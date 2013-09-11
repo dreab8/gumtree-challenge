@@ -2,7 +2,6 @@ package com.gumtree.tasks.boriero.android.ad;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,8 +55,12 @@ public class AdDetailsFragment extends SherlockFragment {
 
     public void setAd(Ad ad) {
         setAdDescription( ad.getDescription() );
-        Log.v( "XXX", "time " + ad.getDisplayDate() );
         setAdTime( ad.getDisplayDate() );
+        setAdLocaiton(ad.getLocation());
+    }
+
+    private void setAdLocaiton(String location) {
+        setTextViewValue( R.id.ad_location, location );
     }
 
     private void setAdTime(String displayDate) {
