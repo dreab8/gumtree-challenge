@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Vertical">
+        <item name="android:orientation">vertical</item>
+    </style>
+    <style name="Match" parent="Vertical">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+    <style name="MatchHeight" parent="Match">
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+    <style name="MatchWidth" parent="Match">
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="Wrap" parent="Vertical">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="DetailsOverflowButton" parent="@style/MatchHeight">
+        <item name="android:layout_width">50dp</item>
+        <item name="android:src">@drawable/ic_menu_moreoverflow_normal_holo_dark</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:scaleType">center</item>
+        <item name="android:background">@drawable/selectable_background_gumtree</item>
+    </style>
+    <style name="DetailsStarButton" parent="@style/Wrap">
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:background">@drawable/btn_toggle_fav</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:gravity">center</item>
+        <item name="android:scaleType">center</item>
+        <item name="android:textOff"> </item>
+        <item name="android:textOn"> </item>
+    </style>
+    <style name="AdDetailsTitle.Description" parent="@style/MatchWidth">
+        <item name="android:textAppearance">@style/TextXLarge.Light.Roboto.Light</item>
+        <item name="android:text">@string/title_description</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:padding">@dimen/gutter</item>
+    </style>
+
+    <style name="TextLarge">
+        <item name="android:textSize">@dimen/text_large</item>
+    </style>
+    <style name="TextMedium">
+        <item name="android:textSize">@dimen/text_medium</item>
+    </style>
+
+    <style name="TextSmall">
+        <item name="android:textSize">@dimen/text_small</item>
+    </style>
+
+    <style name="TextMedium.Light" parent="@style/TextMedium">
+        <item name="android:textColor">@color/midtone_grey</item>
+    </style>
+    <style name="TextXLarge">
+        <item name="android:textSize">@dimen/text_x_large</item>
+    </style>
+    <style name="TextXLarge.Roboto.Light" parent="@style/TextXLarge">
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+    <style name="TextXLarge.Light.Roboto.Light" parent="@style/TextXLarge">
+        <item name="android:textColor">@color/midtone_grey</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+    <style name="TextXLarge.Light" parent="@style/TextXLarge">
+        <item name="android:textColor">@color/midtone_grey</item>
+    </style>
+    <style name="TextMedium.Light.Roboto.Light" parent="@style/TextMedium.Light">
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+    <style name="TextXLarge.Light.Roboto.Light" parent="@style/TextXLarge.Light">
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+    <style name="HorizotalSeparator" parent="@style/MatchWidth" >
+        <item name="android:background">@color/midtone_grey</item>
+        <item name="android:layout_height">0.4dip</item>
+    </style>
+
+    <style name="AdDetails.Price" parent="@style/Wrap">
+        <item name="android:textAppearance">@style/TextXLarge.Roboto.Light</item>
+        <item name="android:textColor">@color/pressed_gumtree</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+
+</resources>

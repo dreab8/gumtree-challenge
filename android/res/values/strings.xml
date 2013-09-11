@@ -7,4 +7,8 @@
     <string name="email">EMAIL</string>
     <string name="menu_star">Star it</string>
     <string name="menu_share">Share</string>
+    <string name="price">Price</string>
+    <string name="menu_call">Call</string>
+    <string name="menu_sms">SMS</string>
+    <string name="menu_email">Email</string>
 </resources>

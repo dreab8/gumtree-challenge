@@ -2,10 +2,13 @@ package com.gumtree.tasks.boriero.android.ad;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
 import android.view.View;
+import android.view.Window;
 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
@@ -15,6 +18,9 @@ import com.gumtree.tasks.boriero.android.R;
 import com.gumtree.tasks.boriero.android.ad.loader.AdLoader;
 import com.gumtree.tasks.boriero.api.ad.Ad;
 import com.manuelpeinado.fadingactionbar.FadingActionBarHelper;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * @author Andrea Boriero <dreborier@gmail.com>
@@ -36,6 +42,7 @@ public class AdDetailsActivity extends SherlockFragmentActivity
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
+        getWindow().requestFeature( Window.FEATURE_ACTION_BAR_OVERLAY );
         getSupportActionBar().setDisplayOptions( ActionBar.DISPLAY_HOME_AS_UP | ActionBar.DISPLAY_SHOW_HOME );
         FadingActionBarHelper helper = new FadingActionBarHelper()
                 .actionBarBackground( R.drawable.ab_solid_gumtree )
@@ -51,7 +58,7 @@ public class AdDetailsActivity extends SherlockFragmentActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         getSupportMenuInflater().inflate( R.menu.activity_ad_details, menu );
 
-        createShareActionProvideer( menu );
+        createShareActionProvider( menu );
 
         return true;
     }
@@ -63,10 +70,28 @@ public class AdDetailsActivity extends SherlockFragmentActivity
 
     @Override
     public void onLoadFinished(Loader<Ad> adLoader, Ad ad) {
-        final AdDetailsFragment adDetailsFragment =
-                (AdDetailsFragment) getSupportFragmentManager().findFragmentById( R.id.fragment_ad_details );
         this.ad = ad;
-        adDetailsFragment.setAd( ad );
+        getAdDetailsFragment().setAd( ad );
+        InputStream ims = null;
+        try {
+            ims = getAssets().open(ad.getImage());
+        } catch (IOException e) {
+            e.printStackTrace();  
+        }
+        Drawable d = Drawable.createFromStream(ims, null);
+        getAdImageFragment().setImage(d);
+    }
+
+    private AdImageFragment getAdImageFragment() {
+        return (AdImageFragment) getFragment( R.id.fragment_ad_image );
+    }
+
+    private AdDetailsFragment getAdDetailsFragment() {
+        return (AdDetailsFragment)getFragment( R.id.fragment_ad_details );
+    }
+
+    private Fragment getFragment(int fragmentId) {
+        return  getSupportFragmentManager().findFragmentById( fragmentId );
     }
 
     @Override
@@ -83,7 +108,7 @@ public class AdDetailsActivity extends SherlockFragmentActivity
         } );
     }
 
-    private void createShareActionProvideer(Menu menu) {
+    private void createShareActionProvider(Menu menu) {
         shareActionProvider = (ShareActionProvider) menu.findItem( R.id.menu_share ).getActionProvider();
         shareActionProvider.setShareHistoryFileName( ShareActionProvider.DEFAULT_SHARE_HISTORY_FILE_NAME );
         shareActionProvider.setShareIntent( createShareIntent() );
